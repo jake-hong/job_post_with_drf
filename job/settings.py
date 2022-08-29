@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'companies',
     'users',
     'job_posts',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -149,3 +150,5 @@ CORS_ALLOW_HEADERS = (
 )
 
 APPEND_SLASH = False
+
+AUTH_USER_MODEL = 'users.User'
