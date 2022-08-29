@@ -1,3 +1,22 @@
 from django.db import models
+from companies.models import Company
 
-# Create your models here.
+
+class JobPost(models.Model):
+    company_id = models.ForeignKey(
+        Company,
+        on_delete=models.DO_NOTHING,
+        related_name='job_post'
+    )
+
+    position = models.TextField()
+
+    reward = models.IntegerField(default=0)
+
+    contents = models.TextField()
+
+    Tech_stack = models.TextField()
+
+    class Meta:
+        verbose_name = '채용공고'
+        db_table = 'job_posts'
