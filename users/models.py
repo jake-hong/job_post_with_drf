@@ -4,6 +4,8 @@ from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.contrib.auth.hashers import make_password
 from model_utils.models import TimeStampedModel
 
+from job_posts.models import JobPost
+
 
 class UserManager(BaseUserManager):
     use_in_migrations = True
