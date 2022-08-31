@@ -3,10 +3,12 @@ from companies.models import Company
 
 
 class JobPost(models.Model):
-    company_id = models.ForeignKey(
+    company = models.ForeignKey(
         Company,
         on_delete=models.DO_NOTHING,
-        related_name='job_post'
+        related_name='job_post',
+        null=True,
+        blank=True,
     )
 
     position = models.TextField()
@@ -15,7 +17,7 @@ class JobPost(models.Model):
 
     contents = models.TextField()
 
-    Tech_stack = models.TextField()
+    tech_stack = models.TextField()
 
     class Meta:
         verbose_name = '채용공고'
